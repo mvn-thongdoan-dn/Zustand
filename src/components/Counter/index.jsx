@@ -1,8 +1,17 @@
 import React from 'react';
+import shallow from 'zustand/shallow';
 import useStore from '../../store/store';
 
 const Counter = () => {
-  const { count, incre, decre } = useStore((state) => state);
+  const { count, incre, decre } = useStore((state) => ({
+    count: state.count,
+    incre: state.incre,
+    decre: state.decre
+  }), shallow);
+
+  console.log("count", count);
+  console.log("incre", incre);
+  console.log("decre", decre);
 
   return (
     <div className='counter'>
