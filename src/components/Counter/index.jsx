@@ -9,10 +9,6 @@ const Counter = () => {
     decre: state.decre
   }), shallow);
 
-  console.log("count", count);
-  console.log("incre", incre);
-  console.log("decre", decre);
-
   return (
     <div className='counter'>
       <h1 className='counter-title'>Zustand Counter:</h1>
