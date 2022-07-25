@@ -1,19 +1,18 @@
 import React from 'react';
 import shallow from 'zustand/shallow';
-import bearStore from '../../store/bearStore';
-import countStore from '../../store/countStore';
+import stores from '../../store/stores';
 
 const Counter = () => {
-  const { count, incre, decre } = countStore((state) => ({
+  const { bear, count, incre, decre, increBear } = stores((state) => ({
     count: state.count,
+    bear: state.bear,
+    increBear: state.increBear,
     incre: state.incre,
     decre: state.decre
   }), shallow);
 
-  const { bear, increBear } = bearStore((state) => ({
-    bear: state.bear,
-    increBear: state.increBear,
-  }))
+  console.log("count", count);
+  console.log("bear", bear);
 
   return (
     <>

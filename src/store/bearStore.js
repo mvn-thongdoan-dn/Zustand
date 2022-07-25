@@ -1,6 +1,3 @@
-import create from "zustand";
-import { devtools } from 'zustand/middleware';
-
 let bearStore = (set) => ({
   bear: 0,
 
@@ -14,6 +11,4 @@ let bearStore = (set) => ({
   )
 });
 
-bearStore = devtools(bearStore);
-
-export default create(bearStore);
+export default bearStore;
