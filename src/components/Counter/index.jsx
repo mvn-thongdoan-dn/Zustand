@@ -1,9 +1,9 @@
 import React from 'react';
 import shallow from 'zustand/shallow';
-import useStore from '../../store/store';
+import countStore from '../../store/countStore';
 
 const Counter = () => {
-  const { count, incre, decre } = useStore((state) => ({
+  const { count, incre, decre } = countStore((state) => ({
     count: state.count,
     incre: state.incre,
     decre: state.decre

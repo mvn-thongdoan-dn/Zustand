@@ -1,7 +1,7 @@
 import create from "zustand";
 import { devtools } from 'zustand/middleware'
 
-const useStore = create(devtools((set) => ({
+let countStore = (set) => ({
   count: 0,
   incre: () => set((state) => {
     return {
@@ -13,6 +13,8 @@ const useStore = create(devtools((set) => ({
         count: state.count - 1
       }
     })
-})));
+});
 
-export default useStore;
+countStore = devtools(countStore);
+
+export default create(countStore);
