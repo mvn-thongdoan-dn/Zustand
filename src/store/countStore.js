@@ -1,6 +1,6 @@
 import create from "zustand";
 
-const useStore = create((set) => ({
+const countStore = create((set) => ({
   count: 0,
   incre: () => set((state) => {
       return {
@@ -14,4 +14,4 @@ const useStore = create((set) => ({
     })
 }));
 
-export default useStore;
+export default countStore;

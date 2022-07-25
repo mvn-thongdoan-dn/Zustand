@@ -1,8 +1,8 @@
 import React from 'react';
-import useStore from '../../store/countStore';
+import countStore from '../../store/countStore';
 
 const Counter = () => {
-  const { count, incre, decre } = useStore((state) => state);
+  const { count, incre, decre } = countStore((state) => state);
 
   return (
     <div className='counter'>
