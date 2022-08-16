@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const API = 'https://62de065c79b9f8c30ab1e60a.mockapi.io/api/users';
+
 let userStore = (set) => ({
   userState: {
     users: [],
@@ -16,7 +18,7 @@ let userStore = (set) => ({
     )
 
     try {
-      const res = await axios.get("https://62de065c79b9f8c30ab1e60a.mockapi.io/api/users")
+      const res = await axios.get(API)
 
       set(
         (state) => {
@@ -47,7 +49,7 @@ let userStore = (set) => ({
     )
 
     try {
-      const res = await axios.post("https://62de065c79b9f8c30ab1e60a.mockapi.io/api/users", newUser);
+      const res = await axios.post(API, newUser);
       set(
         (state) => {
           state.userState.loading = false;
@@ -77,7 +79,7 @@ let userStore = (set) => ({
     )
 
     try {
-      await axios.delete(`https://62de065c79b9f8c30ab1e60a.mockapi.io/api/users/${id}`);
+      await axios.delete(`${API}/${id}`);
       set(
         (state) => {
           state.userState.loading = false;
@@ -107,7 +109,7 @@ let userStore = (set) => ({
     )
 
     try {
-      await axios.put(`https://62de065c79b9f8c30ab1e60a.mockapi.io/api/users/${newUser.id}`, newUser);
+      await axios.put(`${API}/${newUser.id}`, newUser);
       
       set(
         (state) => {
