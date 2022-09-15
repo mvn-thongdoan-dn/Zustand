@@ -1,14 +1,6 @@
 let bearStore = (set) => ({
   bear: 0,
-
-  increBear: (actionType) => set((state) => {
-    return {
-      bear: state.bear + 1
-    }
-  },
-  false,
-  `bear/${actionType}`
-  )
+  increBear: () => set((state) => ({bear: state.bear + 1}))
 });
 
 export default bearStore;
